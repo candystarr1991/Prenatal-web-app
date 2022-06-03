@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NUTURE PREG</title>
+  <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+  <div class="hero">
+    <div class="form-box">
+        <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+            <button type="button" class="toggle-btn" onclick="register()">Register</button>
+        </div>
+        <div class="social-icons">
+            <img src="./IMAGE/fb.png">
+            <img src="./IMAGE/gp.png">
+            <img src="./IMAGE/tw.png">
+        </div>
+        <form id="login" class="input-group">
+            <input type="text" class="input-field" placeholder="User Id" required>
+            <input type="text" class="input-field" placeholder="Enter Password" required>
+            <input type="checkbox" class="chech-box"><span style="position: unset">Forgot Password</span>
+
+            <div>
+              <!--  <a href="./index.html"><button type="submit" class="submit-btn">Login</button></a> -->
+
+                <a class="submit-btn" style="margin-top:10px; width: 61%;" href="./caluclator.html">Login</a>
+            </div>
+
+            <!-- <p>
+                <a class="submit-btn" href="./index.html">Homepage</a>
+            </p> -->
+            
+        </form>
+        <form id="register" class="input-group">
+            <input type="text" class="input-field" placeholder="User Id" required>
+            <input type="email" class="input-field" placeholder="Email Id" required>
+            <input type="text" class="input-field" placeholder="Enter Password" required>
+            <input type="checkbox" class="chech-box"><span>I Agree To The Terms & Conditions</span>
+            
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </div>
+    
+          </div>
+    
+          <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+    
+            function register(){
+               x.style.left="-400px";
+               y.style.left="50px";
+               z.style.left="110px";
+            }
+            function login(){
+               x.style.left="50px";
+               y.style.left="450px";
+               z.style.left="0";
+            }
+        </script>
+</body>
+</html>

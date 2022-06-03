@@ -1,0 +1,386 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<title>Due date calculator</title>
+
+<meta name="keywords" content="due date calculator,best pregnancy due date calculator online">
+
+<meta name="description" content="Use the Due Date Calculator to determine the likely due date of your baby. The Due Date Calculator shows the likely conception date, the end of the first and the second trimester dates - and of course the due date.">
+
+
+
+
+<link rel="stylesheet" type="text/css" href="../../common.css" />
+
+<script language="JavaScript" src="../../common.js" type="text/javascript"></script>
+
+<style type="text/css">
+
+<!--
+
+.style1 {color: #FFFFFF}
+
+-->
+
+</style>
+
+</head>
+
+
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+
+
+    <td width="606" valign="top" class="maintd"><h1 align="center">Pregnancy Calculator</h1>
+
+      <p align="left">Use the Due Date Calculator to determine the likely due date of your baby. Keep in mind that only 6% of babies are actually born on their due date. The Due Date Calculator shows the likely conception date, the end of the first and the second trimester dates - and of course the due date. </p>
+
+      <script language="JavaScript">
+
+
+
+
+
+
+function due_date() 
+
+{
+
+// Get input values	
+
+	var d = parseInt(document.getElementById('day').value);
+
+	var m = parseInt(document.getElementById('month').value);
+
+	var y = parseInt(document.getElementById('year').value);
+
+	var c = parseInt(document.getElementById('cycle').value);
+
+
+
+// Get the start of the ovulation    
+
+    var starto = new Date();
+
+	
+
+	starto.setYear(y);
+
+	starto.setMonth(m-1);	
+
+	starto.setDate(d);
+
+	var daymsecs = 60*60*24*1000;
+
+	starto.setTime(starto.getTime() + ((c * daymsecs) - daymsecs*14));
+
+	
+
+// Report the results
+
+	document.getElementById('conception').value = formatted_date(starto);
+
+	var duedate = new Date(); 
+
+	duedate.setTime(starto.getTime() + daymsecs*266);
+
+	document.getElementById('due').value = formatted_date(duedate);	
+
+	starto.setTime(starto.getTime() + daymsecs*70);
+
+	document.getElementById('tri1').value = formatted_date(starto);
+
+	starto.setTime(starto.getTime() + daymsecs*105);
+
+	document.getElementById('tri2').value = formatted_date(starto);
+
+}
+
+
+
+function formatted_date(date)
+
+{
+
+var month = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
+
+	"November", "December");
+
+var y = date.getYear()+1900;
+
+if ((y > 100) && (y <1900)) y+=1900;
+
+if (y == 3900) y = 2000;
+
+return("" + month[date.getMonth()] + " " + date.getDate() + ", " + y);	
+
+}
+
+
+
+</script>
+
+	
+
+      <form name="calculator">
+
+	  <table width="570" border="0" align="center" cellpadding="6" cellspacing="2" class="border">        
+
+        <tr valign="middle" bgcolor="#00c2ff">
+
+          <th colspan="2" scope="col"><h2 class="style1">Nuture Preg Calculator</h2></th>
+
+        </tr>
+
+        <tr bgcolor="#F2F7FB">
+
+          <th colspan="2" scope="row"><p class="normal">When was the first day of your last menstrual period? </p></th>
+
+        </tr>
+
+        <tr bgcolor="#F2F7FB">
+
+          <th colspan="2" scope="row"><select id='month'>
+
+            <option value=1>January
+
+            <option value=2>February
+
+            <option value=3>March
+
+            <option value=4>April
+
+            <option value=5>May
+
+            <option value=6>June
+
+            <option value=7>July
+
+            <option value=8>August
+
+            <option value=9>September
+
+            <option value=10>October
+
+            <option value=11>November
+
+            <option value=12>December
+
+          </select>
+
+            &nbsp;
+
+            <select id='day'>
+
+              <option value=1>1
+
+              <option value=2>2
+
+              <option value=3>3
+
+              <option value=4>4
+
+              <option value=5>5
+
+              <option value=6>6
+
+              <option value=7>7
+
+              <option value=8>8
+
+              <option value=9>9
+
+              <option value=10>10
+
+              <option value=11>11
+
+              <option value=12>12
+
+              <option value=13>13
+
+              <option value=14>14
+
+              <option value=15>15
+
+              <option value=16>16
+
+              <option value=17>17
+
+              <option value=18>18
+
+              <option value=19>19
+
+              <option value=20>20
+
+              <option value=21>21
+
+              <option value=22>22
+
+              <option value=23>23
+
+              <option value=24>24
+
+              <option value=25>25
+
+              <option value=26>26
+
+              <option value=27>27
+
+              <option value=28>28
+
+              <option value=29>29
+
+              <option value=30>30
+
+              <option value=31>31
+
+            </select>
+
+            &nbsp;
+
+            <select id='year'>
+
+              <option value=104 >2004
+
+              <option value=105>2005
+
+              <option value=106 selected>2006
+
+              <option value=107>2007
+
+              <option value=108>2008
+
+              <option value=109>2009
+
+              <option value=110>2010
+
+              <option value=111>2011
+
+              <option value=112>2012
+
+              <option value=113>2013
+
+              <option value=114>2014
+
+              <option value=115>2015
+
+              <option value=116>2016
+
+              <option value=117>2017
+
+              <option value=118>2018
+                <option value=119>2019
+                    <option value=120>2020
+                        <option value=121>2021
+                            <option value=122>2022
+
+            </select></th>
+
+        </tr>
+
+        <tr bgcolor="#F2F7FB">
+
+          <th scope="row">Number of days in your menstrual cycle </th>
+
+          <td><input type="input" id='cycle' value=28></td>
+
+        </tr>
+
+        <tr bgcolor="#F2F7FB">
+
+          <th colspan="2" scope="row"><input type="button" value="Calculate" onClick="due_date()"></th>
+
+          </tr>
+
+        <tr bgcolor="#ECE9D8">
+
+          <th scope="row"><div align="left">Likely conception date: </div></th>
+
+          <td><input type="text" id='conception' style="BACKGROUND-COLOR: #ECE9D8" size="24"></td>
+
+        </tr>
+
+        <tr bgcolor="#ECE9D8">
+
+          <th scope="row"><div align="left">End of first trimester (12 weeks): </div></th>
+
+          <td><input type="text" id='tri1' style="BACKGROUND-COLOR: #ECE9D8" size="24"></td>
+
+        </tr>
+
+        <tr bgcolor="#ECE9D8">
+
+          <th scope="row"><div align="left">End of second trimester (27 weeks): </div></th>
+
+          <td><input type="text" id='tri2' style="BACKGROUND-COLOR: #ECE9D8" size="24"></td>
+
+        </tr>
+
+        <tr bgcolor="#ECE9D8">
+
+          <th scope="row"><div align="left" class="orange">Your due date (40 weeks): </div></th>
+
+          <td><input type="text" id='due' style="BACKGROUND-COLOR: #ECE9D8" size="24"></td>
+
+        </tr>
+
+        <tr bgcolor="#ECE9D8">
+
+          <th colspan="2" class="Copyright" scope="row">Copyright<FONT face=tahoma,arial><SMALL><SMALL> &copy; 2008 <a href="">Nuture Preg.</a>. All rights reserved.</SMALL></SMALL></FONT></th>
+
+          </tr>
+
+      </table>            
+
+      </form>      
+
+	 
+
+
+
+<hr>
+
+
+
+<span class="Copyright">
+<table width="796" height="117" border="0" align="center" cellpadding="0" cellspacing="0" class="bottom">
+  <tr>
+    <td valign="bottom">
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="35" colspan="2" valign="top" class="botnav"><div align="right">&nbsp;&nbsp;<a href="./mood calulator.html">Mood Journal</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="./landing.html">Back to Home</a></div></td>
+      </tr>
+      <tr>
+       
+        <td width="656" valign="top" class="botnav"><div align="left">
+          <p class="Copyright">            Copyright &copy; Nuture Preg. All Rights Reserved.&nbsp;&nbsp; <a href=" target="_blank" rel="nofollow"><u>Privacy Policy</u></a> | <a href="" target="_blank" rel="nofollow"><u>Acceptable Use Policy (AUP)</u></a>        <br>
+&nbsp;          </p>
+</div>
+          </td>
+        </tr>
+      <tr>
+        <td colspan="2" valign="top" class="botnav" align="center">&nbsp;</td>
+        </tr>
+    </table>    
+    </td>
+  </tr>
+</table>
+</span>
+<!-- Start Quantcast tag -->
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<script type="text/javascript">_qacct="p-a037jKxgmwlo2";quantserve();</script>
+<noscript>
+<a href="http://www.quantcast.com/p-a037jKxgmwlo2" target="_blank"><img src="http://pixel.quantserve.com/pixel/p-a037jKxgmwlo2.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/></a>
+</noscript>
+<!-- End Quantcast tag -->
+
+</body>
+
+</html>
+
